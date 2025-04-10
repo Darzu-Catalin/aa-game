@@ -1,10 +1,5 @@
 # ok_boomerang.py
-# Stage 1 algorithm for the Iterated Prisoner’s Dilemma tournament
-
-COOP_THRESHOLD = 0.30      # cooperate if opponent’s defection rate ≤ 30 %
-DEFECT_THRESHOLD = 0.70     # defect if opponent’s defection rate ≥ 70 %
-FORGIVE_THRESHOLD = 0.50    # allow forgiveness when overall rate < 50 %
-WINDOW_MIN, WINDOW_MAX = 1, 20  # sliding‑window size limits
+# Stage 1 algorithm for the Iterated Prisoner’s Dilemma tournament
 
 
 def strategy(my_history: list[int],
@@ -25,6 +20,10 @@ def strategy(my_history: list[int],
               offer forgiveness and cooperate.
     Returns 1 for cooperation or 0 for defection.
     """
+    COOP_THRESHOLD = 0.30  # cooperate if opponent’s defection rate ≤ 30 %
+    DEFECT_THRESHOLD = 0.70  # defect if opponent’s defection rate ≥ 70 %
+    FORGIVE_THRESHOLD = 0.50  # allow forgiveness when overall rate < 50 %
+    WINDOW_MIN, WINDOW_MAX = 1, 20  # sliding‑window size limits
 
     # First round: cooperate
     if not my_history:
